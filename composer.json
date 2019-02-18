@@ -1,0 +1,24 @@
+{
+    "name": "yangzhouhong/bobbys-oop",
+    "description": "Php oop frame component library (Including Database Orm Component)",
+    "type": "library",
+    "license": "Mit",
+    "authors": [
+        {
+            "name": "yangzhouhong",
+            "email": "995933447@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Bobby\\": "src/"
+        },
+        "files": [
+            "src/Contract/Http/Request/InstanceFactory.php",
+            "src/Contract/Http/Request/FilterTrait.php",
+            "src/Contract/Http/Request/Instance/InstanceTrait.php"
+        ]
+    }
+}
