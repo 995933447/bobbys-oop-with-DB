@@ -140,7 +140,6 @@ class Container implements ContainerContract
 		$concrete = $this->getConcrete($abstract);
 
 		if ($this->isBuildable($abstract, $concrete)) {
-			// if($abstract == 'DB'){var_dump($this->bindings[$abstract]['concrete']);die;}
 			$dispatch = $this->build($concrete, $parameter);
 		} else {
 			$dispatch = $this->make($concrete, $parameter);
