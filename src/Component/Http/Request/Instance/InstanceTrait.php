@@ -71,15 +71,21 @@ trait InstanceTrait
 	}
 
 	public function uri()
-	{
-	    if ($pathinfo =$this->server('path_info')) {
+	{   
+	    if ($pathinfo = $this->server('path_info')) { 
 	        return $pathinfo;
 	    }
 
-	    $uri = ltrim($this->server('request_uri'), $this->server('php_self'));
-	    $uri = $uri == '' ? '/' : $uri;
+	    if(strpos($uri = $this->server('request_uri'), $script = $this->server('php_self')) === 0) {
+	    	$uri = mb_substr($uri, mb_strlen($script)); 
+	    }
 
-	    return substr($uri, strpos($uri, '?') !== false ? strpos($uri, '?') + 1 : 0);
+	    $uri = ($uri === '' || $uri{0} === '?') ? '/' : $uri;
+	    
+	    if($position = strpos($uri, '?') !== false) {
+	    	return substr($uri, 0, $position);
+	    }
+	    return $uri;
 	}
 
 	public function uriWithQuery()
