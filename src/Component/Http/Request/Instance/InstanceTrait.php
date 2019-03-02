@@ -1,7 +1,7 @@
 <?php 
- namespace Bobby\Component\Http\Request\Instance;
+namespace Bobby\Component\Http\Request\Instance;
 
- use Bobby\Component\Http\Request\FilterTrait;
+use Bobby\Component\Http\Request\FilterTrait;
 
 trait InstanceTrait
 {
