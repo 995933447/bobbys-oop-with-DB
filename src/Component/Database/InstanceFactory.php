@@ -1,7 +1,7 @@
 <?php 
 namespace Bobby\Component\Database;
 
-class OrmInstanceFactory
+class InstanceFactory
 {
 	private $config;
 
