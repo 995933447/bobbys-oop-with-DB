@@ -52,7 +52,7 @@
 
  		foreach ($listeners as $listener) {
  			$response= $listener($payload);
- 			if ($response === false || (!$halt && $response != false)) {
+ 			if ($response === false || ($halt && $response !== null)) {
  				return $response;
  			}
  			$responses[] = $response;
